@@ -1,11 +1,13 @@
-section {
-    width: 100%;
-    max-width: 420px;
-    min-height: 400px;
+.section-register {
+    width: 100vw;
+    height: 100vh;
+    min-height: 50vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 1rem;
+    align-items: center;
+    align-content: center;
+    padding: 7rem;
 }
 
 form {

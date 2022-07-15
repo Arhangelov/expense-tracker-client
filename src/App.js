@@ -9,6 +9,7 @@ import { Context } from './context/UserContext';
 import Welcome from './components/Welcome/Welcome';
 import Register from './components/Register/Register';
 import Home from'./components/Home/Home';
+import Profile from './components/Profile/Profile';
 
 function App() {
 	const navigate = useNavigate();
@@ -20,9 +21,10 @@ function App() {
 		//Getting user from Locale Storage and navigate to home page.
 		const currentUser = JSON.parse(localStorage.getItem('user'));
 		setUser(currentUser);
-		
-		toast.success(`Welcome ${currentUser.username}.`);
-		navigate('/home');
+		if ( user.username ) {
+			toast.success(`Welcome ${currentUser.username}.`);
+			navigate('/home');
+		}
 
 	}, [setUser])
 	
@@ -30,9 +32,10 @@ function App() {
 		<div name='App'>
 			<Toaster />
 			<Routes>
-				<Route path='/home' element={ <Home />} />
-				<Route path='/register' element={ <Register /> } />
 				<Route path='/' element={ <Welcome /> } /> 
+				<Route path='/register' element={ <Register /> } />
+				<Route path='/home' element={ <Home />} />
+				<Route path='/profile' element={ <Profile />} />
         	</Routes>
     	</div>
 	);

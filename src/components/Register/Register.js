@@ -87,7 +87,7 @@ const Register = () => {
   return (
     <>
       <Toaster/>
-      <section>
+      <section className='section-register'>
 
         <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
         <h2>Register</h2>

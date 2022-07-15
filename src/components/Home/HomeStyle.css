@@ -1,0 +1,33 @@
+.container-nav {
+    margin-top: 1rem;
+    margin-right: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.navigation-profile {
+    text-decoration: none;
+}
+
+.navigation-logout {
+    margin-left: 1rem;
+    font-family: 'Anonymous Pro', monospace;
+    font-size: 20px;
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+    border: none;
+    padding: 0.5rem;
+    background-color: #0d0c0c;
+    color: darkgrey;
+}
+
+.container-main {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}

@@ -43,7 +43,7 @@ const Login = () => {
     return (
       <>
       <Toaster />
-        <section>
+        <section className='section-login'>
           <form onSubmit={onLoginFormSubmitHandler}>
               <label htmlFor='email'>Email</label>
               <input name='email' type='text' onChange={(e) => setEmail(e.target.value)}/>
