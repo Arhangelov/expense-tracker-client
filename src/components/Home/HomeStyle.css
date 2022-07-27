@@ -15,7 +15,7 @@
 .navigation-logout {
     margin-left: 1rem;
     font-family: 'Anonymous Pro', monospace;
-    font-size: 20px;
+    font-size: 1rem;
     padding: 0.25rem;
     border-radius: 0.5rem;
     border: none;
@@ -26,7 +26,7 @@
 
 .container-main {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-content: center;
     justify-content: center;
     align-items: center;

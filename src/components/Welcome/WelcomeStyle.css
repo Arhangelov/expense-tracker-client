@@ -1,4 +1,5 @@
 .container {
+    padding-top: 9rem;
     display: flex;
     flex-direction: column;
     align-content: center;

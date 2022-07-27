@@ -15,7 +15,7 @@ form {
     flex-direction: column;
     justify-content: space-evenly;
     flex-grow: 1;
-    padding-bottom: 1rem;
+    padding-bottom: 1em;
 }
 
 a, a:visited {
@@ -26,19 +26,18 @@ input[type="text"],
 input[type="password"],
 input[type="submit"],
 textarea {
-  font-family: 'Anonymous Pro', monospace;
-  font-size: 22px;
-  padding: 0.25rem;
+  font-size: 1rem;
+  padding: 0.25em;
   border-radius: 0.5rem;
 }
 
 label,
 input[type="submit"] {
-  margin-top: 1rem;
+  margin-top: 3em;
 }
 
 input[type="submit"] {
-  padding: 0.5rem;
+  padding: 0.8em;
   background-color: #101010;
   color: darkgrey;
 }
