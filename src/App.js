@@ -1,10 +1,7 @@
-import React, { useContext, useEffect } from 'react';
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import toast, { Toaster } from 'react-hot-toast';
-
-//User Context
-import { Context } from './context/UserContext';
+import { Toaster } from 'react-hot-toast';
 
 //Components for routing;
 import Welcome from './components/Welcome/Welcome';
@@ -17,12 +14,12 @@ function App() {
 	return (
 		<div name='App'>
 			<Toaster />
-					<Routes>
-						<Route path='/' element={ <Welcome /> } /> 
-						<Route path='/home' element={ <Home />} />
-						<Route path='/profile' element={ <Profile />} />
-						<Route path='/register' element={ <Register /> } />
-					</Routes>
+			<Routes>
+				<Route path='/' element={ <Welcome /> } /> 
+				<Route path='/home' element={ <Home />} />
+				<Route path='/profile' element={ <Profile />} />
+				<Route path='/register' element={ <Register /> } />
+			</Routes>
     	</div>
 	);
 }

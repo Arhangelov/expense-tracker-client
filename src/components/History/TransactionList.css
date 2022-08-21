@@ -1,0 +1,28 @@
+.list-container {
+    display: flex;
+    flex-direction: column;
+
+}
+
+table {
+    border-collapse:collapse ;
+    margin: 0.3rem 0;
+}
+
+.btn-delete {
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    color: antiquewhite;
+    font-size: 1.3rem;
+}
+
+.btn-delete :hover {
+    cursor: pointer;
+
+}
+
+tr :hover {
+    font-size: 1.5rem;
+    color: white;
+}

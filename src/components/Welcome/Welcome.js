@@ -10,13 +10,14 @@ import { getUser } from '../../services/authService';
 
 
 const Welcome = () => {
-  const navigate = useNavigate();
+	const navigate = useNavigate();
 	const [ user, setUser ] = useContext(Context);
 
 		//Check if we have logged user.
 		useEffect(() => {
 			//Getting user from Locale Storage and navigate to home page.
 			const currentUser = JSON.parse(localStorage.getItem('user'));
+			console.log(currentUser)
 			if (currentUser){
 				getUser(currentUser.username, currentUser.email)
 				.then(({ loggedUser }) => {
@@ -34,8 +35,8 @@ const Welcome = () => {
 					  
 					  })
 				})
-			} 
-		}, [setUser])
+			}
+		}, [])
 	
   return (
     <div className='container'>

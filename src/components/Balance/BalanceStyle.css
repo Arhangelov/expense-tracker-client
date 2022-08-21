@@ -1,3 +1,23 @@
 .balance {
     padding-bottom: 1em;
+    font-size: 2.5rem;
+    background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033ff, #ff00c4, #ff0000);
+    background-size: 400%;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    animation: animate 10s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        background-position: 400%;
+    }
+
+    50% {
+        background-position: 200%;
+    }
+
+    100% {
+        background-position: 0%;
+    }
 }

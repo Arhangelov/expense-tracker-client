@@ -20,6 +20,10 @@ select {
   border: none;
 }
 
+select {
+  width: 13em;
+}
+
 .form-control {
     font-size: 1rem;
 }
