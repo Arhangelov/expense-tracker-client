@@ -21,7 +21,9 @@ const AddTransaction = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        addTransactionService(user.username, type, category, amount)
+        //Check if any of the inputs are empty 
+        if(type !== "" && category !== "" && amount !== "") {
+          addTransactionService(user.username, type, category, amount)
           .then(transaction => {
             dispatch({ type: "ADD", payload: transaction });
             toast.success('You successfully add new transaction 📒');
@@ -39,6 +41,8 @@ const AddTransaction = () => {
             
             })
           })
+        }
+        
     }
 
   return (

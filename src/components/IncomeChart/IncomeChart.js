@@ -10,20 +10,20 @@ import { useEffect } from 'react';
 
 const IncomeChart = () => {
     const [state, dispatch] = useContext(TransactionContext);
+
+    const newData = state
+    .filter((transaction) => transaction.type === 'income')
+    .reduce((transactions, { category, amount }) => {
+        if(!transactions[category]) transactions[category] = 0;
+        transactions[category] += amount;
+        return transactions;
+    },{})
+
     const [income, setIncome] = useState({
-        labels: state
-            .filter((transaction) => transaction.type === 'income')
-            .reduce((transactions, { category, amount }) => {
-                if(!transactions[category]) transactions[amount] = [];
-                transactions[amount] += amount;
-                return transactions;
-            },[])
-            .map((transaction) => transaction.category),
+        labels: Object.keys(newData),
         datasets: [{
             label: 'Income',
-            data: state
-                .filter((transaction) => transaction.type === 'income')
-                .map((transaction) => transaction.amount),
+            data: Object.values(newData),
             backgroundColor: [
                 '#b2e2e2',
                 '#66c2a4',
@@ -34,20 +34,16 @@ const IncomeChart = () => {
 
     useEffect(() => {
         setIncome({
-            labels: state
-                .filter((transaction) => transaction.type === 'income')
-                .map((transaction) => transaction.category),
-            datasets: [{
-                label: 'Income',
-                data: state
-                    .filter((transaction) => transaction.type === 'income')
-                    .map((transaction) => transaction.amount),
-                backgroundColor: [
-                    '#b2e2e2',
-                    '#66c2a4',
-                    '#238b45'
-                ]
-            }]
+            labels: Object.keys(newData),
+        datasets: [{
+            label: 'Income',
+            data: Object.values(newData),
+            backgroundColor: [
+                '#b2e2e2',
+                '#66c2a4',
+                '#238b45'
+            ]
+        }]
         });
     },[state])
 

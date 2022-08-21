@@ -8,15 +8,20 @@ import { TransactionContext } from '../../context/TransactionContext';
 
 const ExpenseChart = () => {
     const [state, dispatch] = useContext(TransactionContext);
+
+    const newData = state
+    .filter((transaction) => transaction.type === 'expense')
+    .reduce((transactions, { category, amount }) => {
+        if(!transactions[category]) transactions[category] = 0;
+        transactions[category] += amount;
+        return transactions;
+    },{})
+
     const [expense, setExpense] = useState({
-        labels: state
-            .filter((transaction) => transaction.type === 'expense')
-            .map((transaction) => transaction.category),
+        labels: Object.keys(newData),
         datasets: [{
             label: 'Expense',
-            data: state
-                .filter((transaction) => transaction.type === 'expense')
-                .map((transaction) => transaction.amount),
+            data: Object.values(newData),
             backgroundColor: [
                 '#d7301f',
                 '#fc8d59',
@@ -28,21 +33,17 @@ const ExpenseChart = () => {
 
      useEffect(() => {
         setExpense({
-            labels: state
-                .filter((transaction) => transaction.type === 'expense')
-                .map((transaction) => transaction.category),
-            datasets: [{
-                label: 'Income',
-                data: state
-                    .filter((transaction) => transaction.type === 'expense')
-                    .map((transaction) => transaction.amount),
-                backgroundColor: [
-                    '#d7301f',
-                    '#fc8d59',
-                    '#fdcc8a',
-                    '#fef0d9'
-                ]
-            }]
+            labels: Object.keys(newData),
+        datasets: [{
+            label: 'Expense',
+            data: Object.values(newData),
+            backgroundColor: [
+                '#d7301f',
+                '#fc8d59',
+                '#fdcc8a',
+                '#fef0d9'
+            ]
+        }]
         });
     },[state])
 

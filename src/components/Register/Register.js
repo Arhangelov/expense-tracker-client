@@ -69,7 +69,7 @@ const Register = () => {
           throw new Error(errMsg);
         } 
         setUser({ email: res.newUserDTO.email, username: res.newUserDTO.username });
-        const currentUserStringify = localStorage.stringify({ email: res.newUserDTO.email, username: res.newUserDTO.username });
+        const currentUserStringify = JSON.stringify({ email: res.newUserDTO.email, username: res.newUserDTO.username });
         localStorage.setItem('user', currentUserStringify);
         localStorage.setItem('userToken', res.token);
         navigate('/home');
