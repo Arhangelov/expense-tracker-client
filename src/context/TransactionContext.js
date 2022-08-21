@@ -5,8 +5,11 @@ export const TransactionContext = createContext();
 const reducer = (state, action) => {   
     switch (action.type) {
         case "ADD":
-            if(state.find((e) => e.id === action.id)) return [...state];
             return [...state, action.payload];
+        case "SET":
+            return [...action.payload];
+        case "REMOVE":
+            return state.filter((transaction) => transaction.id !== action.payload);
         default:
             throw new Error(`unknown action ${action.type}`);
     }
