@@ -1,4 +1,4 @@
-const url = 'http://localhost:5000/transaction';
+const url = 'https://expenses-tracker-production.up.railway.app/transaction';
 
 const getTransactionService = async ( username ) => {
     return fetch ( url + '/get' , {
