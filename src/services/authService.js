@@ -1,4 +1,4 @@
-const url = 'http://localhost:5000/auth';
+const url = 'https://expenses-tracker-production.up.railway.app/auth';
 
 const getUser = async (username, email) => {
     return fetch ( url + `/getUser`, {
