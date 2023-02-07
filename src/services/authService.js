@@ -1,4 +1,4 @@
-const url = "https://expenses-tracker-arhangelov.vercel.app/auth";
+const url = "https://expenses-tracker-w9jv.vercel.app/auth";
 
 const getUser = async (username, email) => {
     return fetch(url + `/getUser`, {

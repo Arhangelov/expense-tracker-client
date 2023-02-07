@@ -1,4 +1,4 @@
-const url = "https://expenses-tracker-arhangelov.vercel.app/transaction";
+const url = "https://expenses-tracker-w9jv.vercel.app/transaction";
 
 const getTransactionService = async (username) => {
     return fetch(url + "/get", {
